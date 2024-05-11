@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding-block: 20px;
+}
+
+.form {
+  width: 300px;
+}
+
+.input-field {
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-field:hover,
+.input-field:focus {
+  outline: none;
+}
+
+.button {
+  all: unset;
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+  padding: 10px;
+}
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
