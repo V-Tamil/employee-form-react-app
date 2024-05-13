@@ -18,11 +18,18 @@ function App() {
     setDegree(value);
   }
 
+  function removeUser(id) {
+    const filteredUsers = usersList.filter((user) => user.id !== id);
+    setUsersList(filteredUsers);
+  }
+
+  // Add the user
   function addUser(event) {
     event.preventDefault();
 
     if (name && age && degree) {
       const newUser = {
+        id: Date.now(),
         name: name,
         age: age,
         degree: degree,
@@ -68,6 +75,7 @@ function App() {
             <th>Name</th>
             <th>Age</th>
             <th>Degree</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -77,6 +85,20 @@ function App() {
                 <td>{user.name}</td>
                 <td>{user.age}</td>
                 <td>{user.degree}</td>
+                <td>
+                  <button
+                    style={{
+                      all: "unset",
+                      backgroundColor: "red",
+                      color: "white",
+                      padding: "6px 10px",
+                      borderRadius: "6px",
+                    }}
+                    onClick={() => removeUser(user.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             );
           })}
